@@ -1,0 +1,64 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Edit Product</h2>
+                <form action="/admin/edit-product/{{product._id}}" enctype="multipart/form-data" method="POST">
+                    <label for="">Product Name</label><br>
+                    <input type="text" placeholder="Product Name" name="Name" class="form-control"
+                        value="{{product.Name}}" required><br>
+
+
+                    <label for="">Product Description</label><br>
+                    <input type="text" placeholder="Product Description" name="Description" class="form-control"
+                        value="{{product.Description}}" required><br>
+
+                    <label for="">Product Price</label><br>
+                    <input type="number" placeholder="Product Price" name="Price" class="form-control"
+                        value="{{product.Price}}" required><br>
+
+                    <label for="">Product Category</label><br>
+                    <select class="form-select" aria-label="Default select example" name="Category" required>
+                        <option selected>Product Category</option>
+                        <option value="Smartphone">Smartphone</option>
+                        <option value="Laptop">Laptop</option>
+                    </select>
+
+                    {{!-- <input type="text" placeholder="Product Category" name="Category" class="form-control"
+                        value="{{product.Category}}" required><br> --}}
+
+                    <label for="">Product Image</label><br>
+                    <img src="/product-images/{{product._id}}.jpg" id="imgView" class="pt-3 pb-3" alt=""
+                        style="width: 100px; height:auto;">
+                    <input type="file" class="form-control" name="Image" onchange="viewImage(event)" required><br>
+
+                    <button class="navButtonText btn" style="background-color: #fe4066;  color:white" type="submit">Submit</button>
+
+
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+    function viewImage(event) {
+        document.getElementById('imgView').src = URL.createObjectURL(event.target.files[0])
+
+    }
+
+    $("#price").blur(function() {
+    var price = $("#foo").val();
+    var validatePrice = function(price) {
+      return /^(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(price);
+    }
+    alert(validatePrice(price)); // False
+});
+</script>

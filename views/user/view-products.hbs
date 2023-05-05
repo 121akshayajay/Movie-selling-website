@@ -1,0 +1,19 @@
+<section class="container ">
+    <section style="margin-top: 20px;" class="row  ">    
+            {{#each products}}
+            <div class="card col-2 " style="width: 18rem; height: 700px; margin: auto auto 20px 20px  ; background-color:rgba(505, 255, 255, 0.2);box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);">
+                <img style="margin-top: 10px;" src="/product-images/{{this._id}}.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: white;">{{this.Name}}</h5>
+                    <p class="card-text" style="color: white;">{{this.Description}}</p>
+                    <p class="card-text" style="color: white;">{{this.Price}}</p>
+                    <p class="card-text" style="color: white;">{{this.Category}}</p>
+                    <a href="#" class="btn " style="color: rgb(255, 255, 255);background-color:red;">Add to Cart</a>
+                </div>
+            </div>
+            {{/each}}
+
+    </section>
+
+</section>
